@@ -48,7 +48,12 @@
   /* Search */
   /* Breadcrumbs */
   /* Tree */
-  /* Buttons */ }
+  /* Buttons */
+  /**
+   * Animations
+   */ }
+  .sequoia .sequoia-up-one-level {
+    padding: 5px 10px; }
   .sequoia .sequoia-modal-container {
     position: relative;
     height: 100%;
@@ -79,29 +84,19 @@
       border: 1px solid #ebeded;
       border-radius: 3px;
       box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-      height: auto;
       left: 5%;
       margin-left: -2.5%;
-      max-height: 480px;
-      overflow-y: auto;
       position: fixed;
+      top: 10%;
       width: 90%;
-      z-index: 6; }
+      z-index: 9999; }
       @media (min-width: 786px) {
         .sequoia .sequoia-modal-container .sequoia-modal {
           left: 50%;
           top: 50%;
           margin-left: -380px;
           margin-top: -260px;
-          width: 640px;
-          height: 480px; } }
-      .sequoia .sequoia-modal-container .sequoia-modal::-webkit-scrollbar {
-        width: 6px;
-        background-color: #e1f0fa;
-        border-radius: 4px; }
-      .sequoia .sequoia-modal-container .sequoia-modal::-webkit-scrollbar-thumb {
-        background-color: #b6daf2;
-        border-radius: 4px; }
+          width: 640px; } }
   .sequoia .sequoia-notification {
     text-align: center;
     width: 100%; }
@@ -146,6 +141,9 @@
     @media (min-width: 786px) {
       .sequoia .sequoia-search .sequoia-search-form {
         width: 80%; } }
+    .sequoia .sequoia-search .sequoia-search-form input[type="text"]:disabled {
+      background-color: #ebeded;
+      cursor: not-allowed; }
   .sequoia .sequoia-search .sequoia-actions {
     display: block; }
     @media (min-width: 786px) {
@@ -233,6 +231,62 @@
     margin: 5px 0px; }
     .sequoia .help-text.has-error {
       color: #e74c3c; }
+    .sequoia .help-text .mute {
+      color: #9aa4a5; }
   .sequoia .as-sortable-dragging {
     background-color: #e1f0fa;
     border: 1px dotted #b6daf2; }
+  .sequoia .sequoia-animate-repeat.ng-enter, .sequoia .sequoia-animate-repeat.ng-leave {
+    -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .sequoia .sequoia-animate-repeat.ng-enter {
+    -webkit-transform: translateX(-60px);
+        -ms-transform: translateX(-60px);
+            transform: translateX(-60px);
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    opacity: 0; }
+  .sequoia .sequoia-animate-repeat.ng-enter-active {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1; }
+  .sequoia .sequoia-animate-repeat.ng-leave {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    opacity: 1; }
+  .sequoia .sequoia-animate-repeat.ng-leave-active {
+    -webkit-transform: translateX(-60px);
+        -ms-transform: translateX(-60px);
+            transform: translateX(-60px);
+    opacity: 0; }
+  .sequoia .sequoia-animate-repeat.ng-hide-add {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    opacity: 1; }
+  .sequoia .sequoia-animate-repeat.ng-hide-add.ng-hide-add-active {
+    -webkit-transform: translateX(-60px);
+        -ms-transform: translateX(-60px);
+            transform: translateX(-60px);
+    opacity: 0; }
+  .sequoia .sequoia-animate-repeat.ng-hide-remove {
+    -webkit-transform: translateX(-60px);
+        -ms-transform: translateX(-60px);
+            transform: translateX(-60px);
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    display: block !important;
+    opacity: 0; }
+  .sequoia .sequoia-animate-repeat.ng-hide-remove.ng-hide-remove-active {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1; }

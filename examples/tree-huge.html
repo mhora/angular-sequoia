@@ -16,12 +16,7 @@
 <body>
 
   <div data-ng-controller="MainController as vm">
-    <div data-sequoia-tree="vm.treeSingleSelect" data-ng-model="vm.singleSelectedNode" data-node-template="vm.template" data-options="vm.treeSingleSelectOptions"></div>
-
-    <hr>
-
-    <p><a href="" data-ng-click="showTree=!showTree">Show selected nodes</a></p>
-    <pre data-ng-show="showTree">{{ vm.singleSelectedNode | json }}</pre>
+    <div data-sequoia-tree="vm.treeHuge" data-ng-model="vm.selectedNodes" data-node-template="vm.template" data-options="vm.treeSelectOptions"></div>
   </div>
 
   <script src="../bower_components/angular/angular.js"></script>

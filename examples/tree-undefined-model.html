@@ -16,7 +16,9 @@
 <body>
 
   <div data-ng-controller="MainController as vm">
-    <div data-sequoia-tree="vm.treeSingleSelect" data-ng-model="vm.singleSelectedNode" data-node-template="vm.template" data-options="vm.treeSingleSelectOptions"></div>
+    <div data-sequoia-tree="vm.treeSingleSelect" data-ng-model="vm.undefinedModel" data-node-template="vm.template" data-options="vm.treeSingleSelectOptions"></div>
+
+    <a href="" data-ng-click="vm.undefinedModel=undefined">Destroy the model</a>
 
     <hr>
 

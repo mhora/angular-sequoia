@@ -1,5 +1,5 @@
 <ng-form name="sequoiaSearchForm" data-ng-submit="search()" novalidate>
-  <input type="text" placeholder="Search for an item by {{tree.template.title}}" data-ng-model="query" name="search" />
+  <input type="text" placeholder="{{::buttons.searchText}}" data-ng-model="query" name="search" data-ng-disabled="isEditing" />
   <a class="sequoia-button sequoia-button-success" href="" data-ng-if="query.length" data-ng-click="search()" data-ng-bind-html="buttons.search"></a>
   <a class="sequoia-button sequoia-button-default" href="" data-ng-if="isSearching" data-ng-click="clear()" data-ng-bind-html="buttons.searchClear"></a>
 </ng-form>

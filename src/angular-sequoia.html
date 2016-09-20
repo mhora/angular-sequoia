@@ -1,13 +1,15 @@
 <div class="sequoia">
   <div class="sequoia-modal-container" data-ng-if="!inline">
     <a href="" class="sequoia-button sequoia-button-info" data-ng-click="showModal()" data-ng-bind="model.length ? isMultiSelect ? buttons.modalSelect + ' (' + model.length + ')' : buttons.modalSelect + ' (1)' : buttons.modalSelect"></a>
-    <div class="sequoia-overlay" data-ng-show="modalShown"></div>
-    <div class="sequoia-modal" data-ng-show="modalShown">
-      <div class="sequoia-modal-title">
-        <h4 class="pull-left" data-ng-bind-html="buttons.modalSelect"></h4>
-        <a href="" class="sequoia-modal-close pull-right" data-ng-click="closeModal()">&times;</a>
+    <div data-ng-if="modalShown">
+      <div class="sequoia-overlay"></div>
+      <div class="sequoia-modal">
+        <div class="sequoia-modal-title">
+          <h4 class="pull-left" data-ng-bind-html="buttons.modalSelect"></h4>
+          <a href="" class="sequoia-modal-close pull-right" data-ng-click="closeModal()">&times;</a>
+        </div>
+        <div data-ng-include="'sequoia-tree.html'"></div>
       </div>
-      <div data-ng-include="'sequoia-tree.html'"></div>
     </div>
   </div>
 

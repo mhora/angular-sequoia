@@ -3,6 +3,10 @@
     <a class="sequoia-button sequoia-button-info" href="" data-ng-click="toggleSelected()" data-ng-bind-html="model.length && !onlySelected ? buttons.showSelected : !model.length && onlySelected ? buttons.backToList : buttons.hideSelected"></a>
   </li>
 
+  <li data-ng-if="model.length && onlySelected && !isEditing">
+    <a class="sequoia-button sequoia-button-info" href="" data-ng-click="deselectAll()" data-ng-bind-html="buttons.deselectAll"></a>
+  </li>
+
   <li data-ng-if="isEditing && !onlySelected">
     <a class="sequoia-button sequoia-button-success" href="" data-ng-click="addNode()" data-ng-bind-html="buttons.addNode"></a>
   </li>

@@ -1,12 +1,16 @@
 <ng-form name="sequoiaEditForm" novalidate>
 
   <div class="sequoia-search">
-    <div class="sequoia-search-form" data-sequoia-search data-is-searching="searchEnabled" data-tree="tree" data-buttons="buttons"></div>
+    <div data-ng-if="::options.allowSearch" class="sequoia-search-form" data-sequoia-search data-is-searching="searchEnabled" data-is-editing="isEditing" data-tree="tree" data-buttons="buttons"></div>
 
     <div class="sequoia-actions" data-ng-include="'sequoia-tree-actions.html'"></div>
   </div>
 
   <ul data-ng-if="!searchEnabled && !onlySelected" class="sequoia-breadcrumbs" data-ng-include="'sequoia-breadcrumbs.html'"></ul>
+
+  <p class="sequoia-up-one-level" data-ng-if="parentNode && !searchEnabled">
+    <a href="" class="sequoia-button sequoia-button-info" data-ng-click="load(parentNode)" data-ng-bind-html="buttons.up"></a>
+  </p>
 
   <div class="sequoia-notification" data-ng-show="notification">
     <p>
@@ -15,12 +19,12 @@
     </p>
   </div>
 
-  <ul data-ng-if="isEditing" id="sequoia-tree" class="sequoia-tree" data-as-sortable="{ containment: '#sequoia-tree', containerPositioning: 'relative' }" data-ng-model="tree.nodes">
-    <li data-ng-repeat="node in tree.nodes track by node[tree.template.id]" data-as-sortable-item data-ng-include="'sequoia-item.html'"></li>
-  </ul>
-
-  <ul data-ng-if="!isEditing" id="sequoia-tree" class="sequoia-tree">
-    <li data-ng-repeat="node in tree.nodes track by node[tree.template.id]" data-ng-include="'sequoia-item.html'"></li>
-  </ul>
+  <div data-ng-style="containerStyle">
+    <div data-infinite-scroll="loadMore()" data-infinite-scroll-disabled="finished" data-infinite-scroll-listen-for-event="nodes:updated" data-infinite-scroll-reset="true" data-ng-attr-data-infinite-scroll-parent="{{!inline || undefined}}">
+      <ul id="sequoia-tree" class="sequoia-tree" data-ng-sortable="sortableOptions" data-ng-model="tree.nodes">
+        <li class="sequoia-animate-repeat" data-ng-repeat="node in tree.nodes track by node[tree.template.id]" data-ng-include="'sequoia-item.html'"></li>
+      </ul>
+    </div>
+  </div>
 
 </ng-form>

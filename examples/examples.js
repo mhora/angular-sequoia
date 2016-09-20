@@ -13,19 +13,19 @@ function MainController($timeout) {
 
   var tree = [
     {
-      _id: '123412341234',
+      _id: _.uniqueId(),
       title: 'Title one',
       nodes: [
         {
-          _id: '12341234123414531234',
+          _id: _.uniqueId(),
           title: 'Subtitle one',
           nodes: [
             {
-              _id: '4634575647',
+              _id: _.uniqueId(),
               title: 'Subsubtitle one',
               nodes: [
                 {
-                  _id: '123123123123',
+                  _id: _.uniqueId(),
                   title: 'Subsubsubtitle one'
                 }
               ]
@@ -33,43 +33,43 @@ function MainController($timeout) {
           ]
         },
         {
-          _id: '16789',
+          _id: _.uniqueId(),
           title: 'Subtitle two'
         }
       ]
     },
     {
-      _id: '2134123412341234',
+      _id: _.uniqueId(),
       title: 'Title two',
       nodes: [
         {
-          _id: '00678234559',
+          _id: _.uniqueId(),
           title: 'Subtitle one'
         },
         {
-          _id: '34632463574',
+          _id: _.uniqueId(),
           title: 'Subtitle two'
         }
       ]
     },
     {
-      _id: '46783721376',
+      _id: _.uniqueId(),
       title: 'Curriculum Items',
       nodes: [
         {
-          _id: '0578234547635',
+          _id: _.uniqueId(),
           title: 'RCPCH Paediatric Immunology, Infectious Diseases and Allergy',
           nodes: [
             {
-              _id: '3450963402-5892345',
+              _id: _.uniqueId(),
               title: 'Detailed knowledge of common and serious paediatric conditions and their management in General Paediatrics or in a paediatric sub-specialty',
               nodes: [
                   {
-                  _id: '23459817234012734',
+                  _id: _.uniqueId(),
                   title: 'Emphasis on Immunology and infectious diseases',
                   nodes: [
                     {
-                      _id: '12093481023984',
+                      _id: _.uniqueId(),
                       title: 'Know and understand the complexities of the relationship between the host and infecting organisms'
                     }
                   ]
@@ -118,6 +118,31 @@ function MainController($timeout) {
   $timeout(function(){
     vm.treeAsync = angular.copy(tree);
   }, 1000);
+
+  //Tree for infinite scroll
+  vm.treeInfiniteScroll = angular.copy(tree);
+  for(var i=0;i<100;i++) {
+    vm.treeInfiniteScroll.push({_id: _.uniqueId('generated_'), title: 'Generated title ' + i});
+  }
+  for(var j=0;j<50;j++) {
+    vm.treeInfiniteScroll[0].nodes.push({_id: _.uniqueId('generated_subitem_'), title: 'Subgenerated title ' + j});
+  }
+
+  //Tree with a set path
+  vm.treeSetPath = angular.copy(tree);
+  vm.nodeForPath = {_id: '0000000000', title: 'Set path', nodes: [{ _id: _.uniqueId(), title: 'Sub set path'}]};
+  vm.treeSetPath.push(vm.nodeForPath);
+
+  //Huge tree
+  vm.treeHuge = angular.copy(tree);
+  for(var i=0;i<10000;i++) {
+    vm.treeHuge.push({_id: _.uniqueId('generated_'), title: 'Generated title ' + i});
+  }
+  for(var j=0;j<1000;j++) {
+    vm.treeHuge[0].nodes.push({_id: _.uniqueId('generated_subitem_'), title: 'Subgenerated title ' + j});
+    vm.treeHuge[1].nodes.push({_id: _.uniqueId('generated_subitem_'), title: 'Subgenerated title ' + j});
+    vm.treeHuge[2].nodes.push({_id: _.uniqueId('generated_subitem_'), title: 'Subgenerated title ' + j});
+  }
 
 }
 

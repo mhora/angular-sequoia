@@ -1,3 +1,114 @@
+###v0.3.0
+___
+
+* Refactor util functions from Factory and improve the model initialisation ([tricinel](http://github.com/tricinel))
+
+###v0.2.17
+___
+
+* Fix modal positioning on mobile devices ([tricinel](http://github.com/tricinel))
+
+###v0.2.16
+___
+
+* Fix issue when model can become undefined after the tree has been initialised ([tricinel](http://github.com/tricinel))
+
+###v0.2.15
+___
+
+* Fix infinite scroll for modals ([tricinel](http://github.com/tricinel))
+* Remove height-related styles from modal ([tricinel](http://github.com/tricinel))
+
+###v0.2.14
+___
+
+* Make use of the new reset parameter for infinite scroll ([tricinel](http://github.com/tricinel))
+* Add call to reset pagination when loading a new node ([tricinel](http://github.com/tricinel))
+* Add pagination reset function ([tricinel](http://github.com/tricinel))
+* Temporarily move ngInfinitScroll to personal branch ([tricinel](http://github.com/tricinel))
+
+###v0.2.13
+___
+
+* Add infinite-scroll distance and listen for event to check if the nodes should update when navigating the tree ([tricinel](http://github.com/tricinel))
+
+###v0.2.12
+___
+
+* Fix sorting not being saved ([tricinel](http://github.com/tricinel))
+
+###v0.2.11
+___
+
+* Fix removeNode not removing from tree, only from currentNodes on screen ([tricinel](http://github.com/tricinel))
+* Make allowSearch default to true ([tricinel](http://github.com/tricinel))
+
+###v0.2.10
+___
+
+* Make search form optional, enabled by default ([tricinel](http://github.com/tricinel))
+
+###v0.2.9
+___
+
+* Hide Up button when the user is searching ([tricinel](http://github.com/tricinel))
+* Remove angular.copy tree nodes ([tricinel](http://github.com/tricinel))
+
+###v0.2.8
+___
+
+* Add finished for infinite scroll ([tricinel](http://github.com/tricinel))
+
+###v0.2.7
+___
+
+* Change watch to watchCollection ([tricinel](http://github.com/tricinel))
+* Add path watcher ([tricinel](http://github.com/tricinel))
+
+###v0.2.6
+___
+
+* Only show the modal if needed ([tricinel](http://github.com/tricinel))
+* Add some one time binding where possible to limit the number of watchers ([tricinel](http://github.com/tricinel))
+
+###v0.2.5
+___
+
+* Add button for Up a level ([tricinel](http://github.com/tricinel))
+
+###v0.2.4
+___
+
+* Make directive scope binding optional for some values ([tricinel](http://github.com/tricinel))
+* Improve long node names by adding a full path to it in the search and selected views ([tricinel](http://github.com/tricinel))
+* Add angular-animate and styles for ngRepeat for tree nodes ([tricinel](http://github.com/tricinel))
+* Add set path so that you can set where the tree should start displaying from ([tricinel](http://github.com/tricinel))
+
+###v0.2.3
+___
+
+* Fix tests by adding BUTTONS ([tricinel](http://github.com/tricinel))
+* Make Root wording customizable ([tricinel](http://github.com/tricinel))
+* Add deselect all button ([tricinel](http://github.com/tricinel))
+
+###v0.2.2
+___
+
+* Update search directive to paginate ([tricinel](http://github.com/tricinel))
+* Disable searching when editing the tree ([tricinel](http://github.com/tricinel))
+
+###v0.2.1
+___
+
+* Move add and remove functions to the factory ([tricinel](http://github.com/tricinel))
+
+###v0.2.0
+___
+
+* Implement infinite scroll for nodes, subnodes and selected ([tricinel](http://github.com/tricinel))
+* Replace as.sortable with Sortable; Jumpstart infinite scroll ([tricinel](http://github.com/tricinel))
+* Replace default buttons with lodash _.defaults to extend ([tricinel](http://github.com/tricinel))
+
 ###v0.1.20
 ___
 

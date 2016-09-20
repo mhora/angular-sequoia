@@ -97,10 +97,12 @@ You can also display the tree in an modal instead of the default inline. Just pa
 
 You can impose a limit of many nodes you can select using `limit = 1`, which would limit the selection to 1.
 
+You can set a start path for the tree, so that it begins displaying with that node. Just pass `data-ng-tree-path="vm.someTreeNode"`.
+
 ##### Coming next
 
-* Better visualiser for long titles
-* Infinite scroll for the nodes on any level
+* Configurable node structure
+* Add/Remove functions passed from the client and just applied by the directive
 
 ##### License
 
